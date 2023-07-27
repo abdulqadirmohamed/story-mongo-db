@@ -13,6 +13,5 @@ export async function POST(request){
 export async function GET(){
     await connectMongoDB()
     const story = await Story.find().sort({ createdAt: -1 })
-    // find().sort({ createdAt: -1 }).toArray();
     return NextResponse.json({story})
 }

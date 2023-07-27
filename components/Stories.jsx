@@ -17,7 +17,7 @@ const Stories = async () => {
     return (
         <div>
             {story.map((story) => (
-                <StoryCard title={story.title} />
+                <StoryCard title={story.title} description={story.description} tag={story.tag} createdAt={story.createdAt} />
             ))}
         </div>
     )
