@@ -15,3 +15,4 @@ export async function GET(){
     const story = await Story.find().sort({ createdAt: -1 })
     return NextResponse.json({story})
 }
+

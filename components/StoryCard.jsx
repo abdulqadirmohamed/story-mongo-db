@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const StoryCard = ({ title, description, tag, createdAt }) => {
+const StoryCard = ({ title, description, tag, createdAt, id }) => {
     let theDate = new Date(createdAt);
     let option = {
         day: "2-digit",
@@ -11,7 +11,7 @@ const StoryCard = ({ title, description, tag, createdAt }) => {
     let result = theDate.toLocaleDateString('en-US', option).replaceAll("/","-")
     return (
         <div className='bg-gray-50 px-5 py-3 rounded-sm my-3'>
-            <Link href="#">
+            <Link href={`story/${id}`}>
                 <h4 className='my-2 text-yellow-600 text-sm'>{tag}</h4>
                 <h1 className='font-bold'>{title}</h1>
                 <p className='text-sm mt-1'>{description}</p>
